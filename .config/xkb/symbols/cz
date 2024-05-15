@@ -1,0 +1,40 @@
+// Keyboard layouts for Czechia.
+
+default partial alphanumeric_keys
+xkb_symbols "coder_phonetic" {
+
+    // https://github.com/xkb-czech-coder-phonetic
+    // Fork of: https://github.com/michalkahle/czech-coder-xkb
+    // Original project provides native CZ layout over US. But using native layout may be a challenge.
+    // So there is phonetic version!
+
+    include "us"
+    name[Group1]= "Czech (coder phonetic)";
+
+    key <TLDE>	{[     grave,  asciitilde,     semicolon, dead_abovering ]}; // AltGr + ` = ё <modifier>
+    key <AE03>	{[         3,  numbersign,        ecaron,     Ecaron ]}; // AltGr + 3 = ě Ě
+    key <AE04>	{[         4,      dollar,      EuroSign,   NoSymbol ]}; // AltGr + 4 = €
+    key <AE07>	{[         7,   ampersand,         uring,      Uring ]}; // AltGr + 7 = ů Ů
+    key <AE12>	{[     equal,        plus,    dead_acute, dead_caron ]}; // AltGr + = = <modified> <modifier>
+
+    key <AD03>	{[         e,           E,        eacute,     Eacute ]}; // AltGr + 2 = é É
+    key <AD04>	{[         r,           R,        rcaron,     Rcaron ]}; // AltGr + r = ř Ř
+    key <AD05>	{[         t,           T,        tcaron,     Tcaron ]}; // AltGr + t = ť Ť
+    key <AD06>	{[         y,           Y,        yacute,     Yacute ]}; // AltGr + y = ý Ý
+    key <AD07>	{[         u,           U,        uacute,     Uacute ]}; // AltGr + u = ú Ú
+    key <AD08>	{[         i,           I,        iacute,     Iacute ]}; // AltGr + i = í Í
+    key <AD09>	{[         o,           O,        oacute,     Oacute ]}; // AltGr + o = ó Ó
+
+    key <AC01>	{[         a,           A,        aacute,     Aacute ]}; // AltGr + a = á Á
+    key <AC02>	{[         s,           S,        scaron,     Scaron ]}; // AltGr + s = š Š
+    key <AC03>	{[         d,           D,        dcaron,     Dcaron ]}; // AltGr + d = ď Ď
+    key <AC11>	{[ apostrophe,  quotedbl,        section,   quotedbl ]}; // AltGr + ' = § "
+    key <BKSL>	{[ backslash,        bar, dead_diaeresis, apostrophe ]}; // AltGr + \ = <modifier> '
+
+    key <AB01>	{[         z,           Z,        zcaron,     Zcaron ]}; // AltGr + z = ž Ž
+    key <AB03>	{[         c,           C,        ccaron,     Ccaron ]}; // AltGr + c = č Č
+    key <AB06>	{[         n,           N,        ncaron,     Ncaron ]}; // AltGr + n = ň Ň
+
+    # Use `AltGr` (right alt) as modifier key
+    include "level3(ralt_switch)"
+};
